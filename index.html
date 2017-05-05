@@ -14,6 +14,24 @@
     <link href="css/styles.css" rel="stylesheet">
 </head>
 
+<script>
+    function openNav1() {
+    document.getElementById("project-info-1").style.height = "80%";
+  }
+
+    function closeNav1() {
+    document.getElementById("project-info-1").style.height = "0%";
+  }
+
+    function openNav2() {
+      document.getElementById("project-expand1").style.height = "300px";
+    }
+
+    function closeNav2() {
+      document.getElementById("project-expand1").style.height = "0%";
+    }
+</script>
+
 <body>
     <div id="mobile-menu-open" class="shadow-large">
         <i class="fa fa-bars" aria-hidden="true"></i>
@@ -30,9 +48,6 @@
             <li>
                 <a href="#projects">Projects</a>
             </li>
-            <!--<li>
-                <a href="#experience">Experience</a>
-            </li>-->
             <li>
                 <a href="#experience">Education</a>
             </li>
@@ -49,7 +64,7 @@
     <div id="lead">
         <div id="lead-content">
             <h1>Ben Waterman</h1>
-            <h2>Software Engineer and Game Developer</h2>
+            <h2>Programmer</h2>
             <a href="#" class="btn-rounded-white">Download Resume</a>
         </div>
         <!-- End #lead-content -->
@@ -81,26 +96,48 @@
     </div>
     <!-- End #about -->
 
+    <div id="project-info-1" class="overlay shadow-large">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+      <div class="overlay-content">
+        <div id="project-lead">
+            <div id="lead-content">
+                <h1>Procedural Generation</h1>
+                <h2>A passion project</h2>
+            </div>
+            <!-- End #lead-content -->
+            <div id="lead-overlay"></div>
+        </div>
+        <div id="overlay-projects-info" class="background">
+          <h3>Example title</h3>
+          <p>Example text goes here. Example text goes here. Example text goes here.Example text goes here.Example text goes here.Example text goes here.Example text goes here.Example text goes here.Example text goes here.Example text goes here.Example text goes here.Example text goes here.</p>
+        </div>
+        <div id="overlay-projects-info" class="background-alt">
+            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/Kae-JjbLsgA?list=LL3_poLB2P3c1oomJUzqUXiA" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <!-- End #lead -->
+      </div>
+    </div>
+
     <div id="projects" class="background-alt">
         <h2 class="heading">Projects</h2>
         <div class="container">
             <div class="row">
 
-              <div class="project shadow-large">
-                  <div class="project-image">
-                      <img src="images/pcg1.png" class="project-square-image"/>
-                  </div>
-                  <!-- End .project-image -->
-                  <div class="project-info">
-                      <h3>Procedural Generation</h3>
-                      <p>
-                          Procedural generation project.
-                      </p>
-                      <a href="#">View Project</a>
-                  </div>
-                  <!-- End .project-info -->
-              </div>
-              <!-- End .project -->
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/pcg1.png" class="project-square-image"/>
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Procedural Generation</h3>
+                        <p>
+                            Although this started off as a university assignment, it quickly became a passion project of mine. All code, models and textures were written/created by myself. This project generates procedurally generated landscapes and small forest villages that are connecting by wooden bridges. Think low-poly <i>Star Wars</i> Ewok villages with vibrant colours.
+                        </p>
+                        <a href="javascript:void(0)" onclick="openNav1()">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
 
                 <div class="project shadow-large">
                     <div class="project-image">
@@ -110,12 +147,13 @@
                     <div class="project-info">
                         <h3>Water Simulation</h3>
                         <p>
-                            Third year project.
+                            This is what I built for my final year project and the basis of my dissertation; a flood management game with semi-realistic water. You are tasked with protecting buildings from the water that threatens to burst through the river and flood the city. By strategically placing defences and managing your money, it is your job to keep the water at bay.
                         </p>
-                        <a href="#">View Project</a>
+                        <a href="javascript:void(0)" onclick="">View Project</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
+
                 <!-- End .project -->
 
                 <div class="project shadow-large">
@@ -126,11 +164,17 @@
                     <div class="project-info">
                         <h3>Other Projects</h3>
                         <p>
-                            Other projects can be found here.
+                            Other university and personal projects can be found here.
                         </p>
-                        <a href="#">View Project</a>
+                        <a href="javascript:void(0)" onclick="openNav2()">View Projects</a>
                     </div>
                     <!-- End .project-info -->
+                </div>
+                <div id="project-expand1" class="project-info-expand shadow-large">
+                    <h2>Procedural Generation</h2>
+                    <p><b>Engine:</b> Unity</p>
+                    <p><b>Language:</b> C#</p>
+                    <p><b>Role:</b> Programmer, designer</p>
                 </div>
                 <!-- End .project -->
 
@@ -138,6 +182,22 @@
         </div>
     </div>
     <!-- End #projects -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">Inspiration</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      Hmm....
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
 
     <div id="experience" class="background-alt">
         <h2 class="heading">Education</h2>
@@ -169,48 +229,6 @@
         </div>
     </div>
     <!-- End #experience -->
-
-    <!--
-    <div id="education">
-        <h2 class="heading">Education</h2>
-        <div class="education-block">
-            <h3>University of Lincoln</h3>
-            <span class="education-date">Sept 2014 - Sept 2017</span>
-            <h4>Bachelor of Science in Games Computing</h4>
-            <ul>
-                <li>
-                    Modules include:
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-            </ul>
-        </div>
-        <!-- End .education-block -->
-
-<!--
-        <div class="education-block">
-            <h3>Thorpe St Andrew Sixth Form</h3>
-            <span class="education-date">Sept 2016 - Sept 2017</span>
-            <h4>A Levels</h4>
-            <ul>
-                <li>
-                    Maths
-                </li>
-                <li>
-                    Physics
-                </li>
-                <li>
-                    BTEC ICT
-                </li>
-            </ul>
-        </div>
-        <!-- End .education-block -->
-    </div>
-    <!-- End #education -->
 
     <div id="skills">
         <h2 class="heading">Skills</h2>
