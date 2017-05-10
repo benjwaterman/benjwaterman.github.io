@@ -15,21 +15,57 @@
 </head>
 
 <script>
+    var isExpanded1 = false;
+    var isExpanded2 = false;
+    var isExpandedAdd = false;
+
     function openNav1() {
-    document.getElementById("project-info-1").style.height = "80%";
+    document.getElementById("project-overlay-1").style.height = "80%";
   }
 
     function closeNav1() {
-    document.getElementById("project-info-1").style.height = "0%";
+    document.getElementById("project-overlay-1").style.height = "0";
   }
 
-    function openNav2() {
-      document.getElementById("project-expand1").style.height = "300px";
+      function toggleProject1() {
+      if(isExpanded1 == false) {
+        isExpanded1 = true;
+        document.getElementById("project-expand-1").style.height = "400px";
+        document.getElementById("expand-button-1").innerHTML = "Hide Project";
+      }
+      else {
+        isExpanded1 = false;
+        document.getElementById("project-expand-1").style.height = "0";
+        document.getElementById("expand-button-1").innerHTML = "View Project";
+      }
     }
 
-    function closeNav2() {
-      document.getElementById("project-expand1").style.height = "0%";
+      function toggleProject2() {
+      if(isExpanded2 == false) {
+        isExpanded2 = true;
+        document.getElementById("project-expand-2").style.height = "400px";
+        document.getElementById("expand-button-2").innerHTML = "Hide Project";
+      }
+      else {
+        isExpanded2 = false;
+        document.getElementById("project-expand-2").style.height = "0";
+        document.getElementById("expand-button-2").innerHTML = "View Project";
+      }
     }
+
+    function toggleAdditionalProjects() {
+      if(isExpandedAdd == false) {
+        isExpandedAdd = true;
+        document.getElementById("project-expand-additional").style.height = "400px";
+        document.getElementById("expand-button-additional").innerHTML = "Hide Projects";
+      }
+      else {
+        isExpandedAdd = false;
+        document.getElementById("project-expand-additional").style.height = "0";
+        document.getElementById("expand-button-additional").innerHTML = "View Projects";
+      }
+    }
+
 </script>
 
 <body>
@@ -65,7 +101,7 @@
         <div id="lead-content">
             <h1>Ben Waterman</h1>
             <h2>Programmer</h2>
-            <a href="#" class="btn-rounded-white">Download Resume</a>
+            <!-- <a href="#" class="btn-rounded-white">Download Resume</a> -->
         </div>
         <!-- End #lead-content -->
 
@@ -96,33 +132,12 @@
     </div>
     <!-- End #about -->
 
-    <div id="project-info-1" class="overlay shadow-large">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
-      <div class="overlay-content">
-        <div id="project-lead">
-            <div id="lead-content">
-                <h1>Procedural Generation</h1>
-                <h2>A passion project</h2>
-            </div>
-            <!-- End #lead-content -->
-            <div id="lead-overlay"></div>
-        </div>
-        <div id="overlay-projects-info" class="background">
-          <h3>Example title</h3>
-          <p>Example text goes here. Example text goes here. Example text goes here.Example text goes here.Example text goes here.Example text goes here.Example text goes here.Example text goes here.Example text goes here.Example text goes here.Example text goes here.Example text goes here.</p>
-        </div>
-        <div id="overlay-projects-info" class="background-alt">
-            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/Kae-JjbLsgA?list=LL3_poLB2P3c1oomJUzqUXiA" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <!-- End #lead -->
-      </div>
-    </div>
-
     <div id="projects" class="background-alt">
         <h2 class="heading">Projects</h2>
         <div class="container">
             <div class="row">
 
+                <!-- Project 1 -->
                 <div class="project shadow-large">
                     <div class="project-image">
                         <img src="images/pcg1.png" class="project-square-image"/>
@@ -133,12 +148,20 @@
                         <p>
                             Although this started off as a university assignment, it quickly became a passion project of mine. All code, models and textures were written/created by myself. This project generates procedurally generated landscapes and small forest villages that are connecting by wooden bridges. Think low-poly <i>Star Wars</i> Ewok villages with vibrant colours.
                         </p>
-                        <a href="javascript:void(0)" onclick="openNav1()">View Project</a>
+                        <a href="javascript:void(0)" onclick="toggleProject1()" id="expand-button-1">View Project</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
+
+                <!--For project info intitially hidden -->
+                <div id="project-expand-1" class="project-info-expand shadow-large">
+
+      
+                </div>
+                <!-- End project-expand -->
                 <!-- End .project -->
 
+                <!-- Project 2 -->
                 <div class="project shadow-large">
                     <div class="project-image">
                         <img src="images/water1.jpg" class="project-square-image"/>
@@ -149,13 +172,20 @@
                         <p>
                             This is what I built for my final year project and the basis of my dissertation; a flood management game with semi-realistic water. You are tasked with protecting buildings from the water that threatens to burst through the river and flood the city. By strategically placing defences and managing your money, it is your job to keep the water at bay.
                         </p>
-                        <a href="javascript:void(0)" onclick="">View Project</a>
+                        <a href="javascript:void(0)" onclick="toggleProject2()" id="expand-button-2">View Project</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
 
+                <!--For project info intitially hidden -->
+                <div id="project-expand-2" class="project-info-expand shadow-large">
+
+      
+                </div>
+                <!-- End project-expand -->
                 <!-- End .project -->
 
+                <!-- Additional projects -->
                 <div class="project shadow-large">
                     <div class="project-image">
                         <img src="images/project.jpg" class="project-square-image"/>
@@ -166,19 +196,51 @@
                         <p>
                             Other university and personal projects can be found here.
                         </p>
-                        <a href="javascript:void(0)" onclick="openNav2()">View Projects</a>
+                        <a href="javascript:void(0)" onclick="toggleAdditionalProjects()" id="expand-button-additional">View Projects</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
-                <div id="project-expand1" class="project-info-expand shadow-large">
-                    <h2>Procedural Generation</h2>
-                    <p><b>Engine:</b> Unity</p>
-                    <p><b>Language:</b> C#</p>
-                    <p><b>Role:</b> Programmer, designer</p>
+                
+                <!--For additional projects intitially hidden -->
+                <div id="project-expand-additional" class="project-info-expand shadow-large">
+
+                    <!--Project-->
+                    <div class="project expanded-project shadow-large">
+                        <div class="expanded-project-title">
+                            <h3>Additonal Project 1</h3>
+                            <a href="javascript:void(0)" onclick="openNav1()">View Project</a>
+                        </div>
+                        <!-- End .project-image -->
+                        <div class="project-info">
+                            <p>
+                                Additional project 1 info
+                            </p>
+                        </div>
+                        <!-- End .project-info -->
+                    </div>
+                    <!-- End .project -->
+
+                    <!-- Project -->
+                    <div class="project expanded-project shadow-large">
+                        <div class="expanded-project-title">
+                            <h3>Additonal Project 2</h3>
+                            <a href="javascript:void(0)" onclick="openNav1()">View Project</a>
+                        </div>
+                        <!-- End .project-image -->
+                        <div class="project-info">
+                            <p>
+                                Additional project 2 info
+                            </p>
+                        </div>
+                        <!-- End .project-info -->
+                    </div>
+                    <!-- End of project -->
                 </div>
+                <!-- End project-expand -->
                 <!-- End .project -->
 
             </div>
+            <!-- End of row -->
         </div>
     </div>
     <!-- End #projects -->
