@@ -30,7 +30,7 @@
       function toggleProject1() {
       if(isExpanded1 == false) {
         isExpanded1 = true;
-        document.getElementById("project-expand-1").style.height = "400px";
+        document.getElementById("project-expand-1").style.height = "auto";
         document.getElementById("expand-button-1").innerHTML = "Hide Project";
       }
       else {
@@ -43,7 +43,7 @@
       function toggleProject2() {
       if(isExpanded2 == false) {
         isExpanded2 = true;
-        document.getElementById("project-expand-2").style.height = "400px";
+        document.getElementById("project-expand-2").style.height = "auto";
         document.getElementById("expand-button-2").innerHTML = "Hide Project";
       }
       else {
@@ -56,7 +56,7 @@
     function toggleAdditionalProjects() {
       if(isExpandedAdd == false) {
         isExpandedAdd = true;
-        document.getElementById("project-expand-additional").style.height = "400px";
+        document.getElementById("project-expand-additional").style.height = "auto";
         document.getElementById("expand-button-additional").innerHTML = "Hide Projects";
       }
       else {
@@ -155,7 +155,25 @@
 
                 <!--For project info intitially hidden -->
                 <div id="project-expand-1" class="project-info-expand shadow-large">
-
+                    <!--Project-->
+                    <div class="project expanded-project shadow-large">
+                        <div class="expanded-project-title">
+                            <h3><b>Engine:</b></h3> 
+                            <p>Unity</p>
+                            <h3><b>Language:</b></h3> 
+                            <p>C#</p>
+                            <h3><b>Role(s):</b></h3> 
+                            <p>Programmer, Designer, Modeller, Texture Artist</p>
+                        </div>
+                        <!-- End .project-image -->
+                        <div class="project-info">
+                            <p>
+                                Additional project 1 info
+                            </p>
+                        </div>
+                        <!-- End .project-info -->
+                    </div>
+                    <!-- End .project -->
       
                 </div>
                 <!-- End project-expand -->
@@ -202,11 +220,11 @@
                 </div>
                 
                 <!--For additional projects intitially hidden -->
-                <div id="project-expand-additional" class="project-info-expand shadow-large">
+                <div id="project-expand-additional" class="additional-project-info shadow-large">
 
                     <!--Project-->
-                    <div class="project expanded-project shadow-large">
-                        <div class="expanded-project-title">
+                    <div class="project additional-project shadow-large">
+                        <div class="additional-project-title">
                             <h3>Additonal Project 1</h3>
                             <a href="javascript:void(0)" onclick="openNav1()">View Project</a>
                         </div>
@@ -221,8 +239,8 @@
                     <!-- End .project -->
 
                     <!-- Project -->
-                    <div class="project expanded-project shadow-large">
-                        <div class="expanded-project-title">
+                    <div class="project additional-project shadow-large">
+                        <div class="additional-project-title">
                             <h3>Additonal Project 2</h3>
                             <a href="javascript:void(0)" onclick="openNav1()">View Project</a>
                         </div>
