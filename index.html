@@ -18,6 +18,8 @@
     var isExpanded1 = false;
     var isExpanded2 = false;
     var isExpandedAdd = false;
+    var expandedProjectHeight = "auto";
+    var additionalProjectHeight = "400px";
 
     function openNav1() {
     document.getElementById("project-overlay-1").style.height = "80%";
@@ -30,33 +32,37 @@
       function toggleProject1() {
       if(isExpanded1 == false) {
         isExpanded1 = true;
-        document.getElementById("project-expand-1").style.height = "auto";
+        document.getElementById("project-expand-1").style.height = expandedProjectHeight;
         document.getElementById("expand-button-1").innerHTML = "Hide Project";
+        document.getElementById("project-1").style.borderRadius = "4px 4px 0px 0px";
       }
       else {
         isExpanded1 = false;
         document.getElementById("project-expand-1").style.height = "0";
         document.getElementById("expand-button-1").innerHTML = "View Project";
+        document.getElementById("project-1").style.borderRadius = "4px 4px 4px 4px";
       }
     }
 
       function toggleProject2() {
       if(isExpanded2 == false) {
         isExpanded2 = true;
-        document.getElementById("project-expand-2").style.height = "auto";
+        document.getElementById("project-expand-2").style.height = expandedProjectHeight;
         document.getElementById("expand-button-2").innerHTML = "Hide Project";
+        document.getElementById("project-1").style.borderRadius = "4px 4px 0px 0px";
       }
       else {
         isExpanded2 = false;
         document.getElementById("project-expand-2").style.height = "0";
         document.getElementById("expand-button-2").innerHTML = "View Project";
+        document.getElementById("project-1").style.borderRadius = "4px 4px 4px 4px";
       }
     }
 
     function toggleAdditionalProjects() {
       if(isExpandedAdd == false) {
         isExpandedAdd = true;
-        document.getElementById("project-expand-additional").style.height = "auto";
+        document.getElementById("project-expand-additional").style.height = additionalProjectHeight;
         document.getElementById("expand-button-additional").innerHTML = "Hide Projects";
       }
       else {
@@ -138,7 +144,7 @@
             <div class="row">
 
                 <!-- Project 1 -->
-                <div class="project shadow-large">
+                <div id="project-1" class="project shadow-large">
                     <div class="project-image">
                         <img src="images/pcg1.png" class="project-square-image"/>
                     </div>
@@ -154,27 +160,30 @@
                 </div>
 
                 <!--For project info intitially hidden -->
-                <div id="project-expand-1" class="project-info-expand shadow-large">
+                <div id="project-expand-1" class="expanded-project-container shadow-large">
                     <!--Project-->
                     <div class="project expanded-project shadow-large">
                         <div class="expanded-project-title">
-                            <h3><b>Engine:</b></h3> 
+                            <h3>Engine:</h3>
                             <p>Unity</p>
-                            <h3><b>Language:</b></h3> 
+                            <h3>Language:</h3>
                             <p>C#</p>
-                            <h3><b>Role(s):</b></h3> 
-                            <p>Programmer, Designer, Modeller, Texture Artist</p>
+                            <h3>Role(s):</h3>
+                            <p>Programmer, Designer, 3D Modeller, Texture Artist</p>
                         </div>
                         <!-- End .project-image -->
-                        <div class="project-info">
+                        <div class="expanded-project-info">
                             <p>
                                 Additional project 1 info
                             </p>
+                            <div class="video-wrapper">
+                                <iframe width="1280" height="720" src="https://www.youtube.com/embed/NrngJGoZb-M" frameborder="0" allowfullscreen></iframe>
+                            </div>
                         </div>
-                        <!-- End .project-info -->
+                        <!-- End .expanded-project-info -->
                     </div>
                     <!-- End .project -->
-      
+
                 </div>
                 <!-- End project-expand -->
                 <!-- End .project -->
@@ -196,9 +205,9 @@
                 </div>
 
                 <!--For project info intitially hidden -->
-                <div id="project-expand-2" class="project-info-expand shadow-large">
+                <div id="project-expand-2" class="expanded-project-container shadow-large">
 
-      
+
                 </div>
                 <!-- End project-expand -->
                 <!-- End .project -->
@@ -218,7 +227,7 @@
                     </div>
                     <!-- End .project-info -->
                 </div>
-                
+
                 <!--For additional projects intitially hidden -->
                 <div id="project-expand-additional" class="additional-project-info shadow-large">
 
