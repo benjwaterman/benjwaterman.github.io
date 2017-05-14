@@ -12,63 +12,8 @@
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/lightbox.min.css" rel="stylesheet">
 </head>
-
-<script>
-    var isExpanded1 = false;
-    var isExpanded2 = false;
-    var isExpandedAdd = false;
-    var expandedProjectHeight = "auto";
-    var additionalProjectHeight = "auto";
-
-    function openNav1() {
-        document.getElementById("project-overlay-1").style.height = "80%";
-    }
-
-    function closeNav1() {
-        document.getElementById("project-overlay-1").style.height = "0";
-    }
-
-    function toggleProject1() {
-        if (isExpanded1 == false) {
-            isExpanded1 = true;
-            document.getElementById("project-expand-1").style.height = expandedProjectHeight;
-            document.getElementById("expand-button-1").innerHTML = "Hide";
-            document.getElementById("project-1").style.borderRadius = "4px 4px 0px 0px";
-        } else {
-            isExpanded1 = false;
-            document.getElementById("project-expand-1").style.height = "0";
-            document.getElementById("expand-button-1").innerHTML = "Expand";
-            document.getElementById("project-1").style.borderRadius = "4px 4px 4px 4px";
-        }
-    }
-
-    function toggleProject2() {
-        if (isExpanded2 == false) {
-            isExpanded2 = true;
-            document.getElementById("project-expand-2").style.height = expandedProjectHeight;
-            document.getElementById("expand-button-2").innerHTML = "Hide";
-            document.getElementById("project-1").style.borderRadius = "4px 4px 0px 0px";
-        } else {
-            isExpanded2 = false;
-            document.getElementById("project-expand-2").style.height = "0";
-            document.getElementById("expand-button-2").innerHTML = "Expand";
-            document.getElementById("project-1").style.borderRadius = "4px 4px 4px 4px";
-        }
-    }
-
-    function toggleAdditionalProjects() {
-        if (isExpandedAdd == false) {
-            isExpandedAdd = true;
-            document.getElementById("project-expand-additional").style.height = additionalProjectHeight;
-            document.getElementById("expand-button-additional").innerHTML = "Hide";
-        } else {
-            isExpandedAdd = false;
-            document.getElementById("project-expand-additional").style.height = "0";
-            document.getElementById("expand-button-additional").innerHTML = "Expand";
-        }
-    }
-</script>
 
 <body>
     <div id="mobile-menu-open" class="shadow-large">
@@ -153,7 +98,7 @@
                         <h3>Procedural Generation</h3>
                         <p>
                             Although this started off as a university assignment, it quickly became a passion project of mine. All code, models and textures were written/created by myself. This project generates procedurally generated landscapes and small forest villages that are
-                            connecting by wooden bridges. Think low-poly <i>Star Wars</i> Ewok villages with vibrant colours.
+                            connected by wooden bridges. Think low-poly <i>Star Wars</i> Ewok villages with vibrant colours.
                         </p>
                         <a href="javascript:void(0)" onclick="toggleProject1()" id="expand-button-1">Expand</a>
                     </div>
@@ -188,7 +133,7 @@
                 <!-- End .project -->
 
                 <!-- Project 2 -->
-                <div class="project shadow-large">
+                <div id="project-2" class="project shadow-large">
                     <div class="project-image">
                         <img src="images/water1.jpg" class="project-square-image" />
                     </div>
@@ -262,8 +207,13 @@
                         <!-- End .project-image -->
                         <div class="project-info">
                             <p>
-                                Additional project info
+                                This mobile app was developed using Android Studio, with its main purpose being to make use of REST APIs. By connecting to Twitch.tv's API, it allows for viewing of the top streamed games and channels. Favourites can also be added, as well as the ability to locate game stores based on the user's location.
                             </p>
+                            <div class="gallery">
+                                <a href="images/project.jpg" data-lightbox="mobile-project" data-title="Mobile App"><img src="images/project.jpg" alt=""/></a>
+                                <a href="images/project.jpg" data-lightbox="mobile-project" data-title="Mobile App"><img src="images/project.jpg" alt=""/></a>
+                                <a href="images/project.jpg" data-lightbox="mobile-project" data-title="Mobile App"><img src="images/project.jpg" alt=""/></a>
+                            </div>
                         </div>
                         <!-- End .project-info -->
                     </div>
@@ -291,10 +241,11 @@
                     <!-- Project -->
                     <div class="project additional-project shadow-large">
                         <div class="additional-project-title tag-blocks">
-                            <h3>Slimes n Switches</h3>
+                            <h3>Chucky Egg</h3>
                             <ul>
-                                <li>Unity</li>
-                                <li>C#</li>
+                                <li>OpenGL</li>
+                                <li>C++</li>
+                                <li>Networking</li>
                             </ul>
                         </div>
                         <!-- End .project-image -->
@@ -310,11 +261,10 @@
                     <!-- Project -->
                     <div class="project additional-project shadow-large">
                         <div class="additional-project-title tag-blocks">
-                            <h3>Chucky Egg</h3>
+                            <h3>Slimes n Switches</h3>
                             <ul>
-                                <li>OpenGL</li>
-                                <li>C++</li>
-                                <li>Networking</li>
+                                <li>Unity</li>
+                                <li>C#</li>
                             </ul>
                         </div>
                         <!-- End .project-image -->
@@ -394,6 +344,8 @@
             <li>Unity</li>
             <li>Unreal Engine</li>
             <li>OpenGL</li>
+            <li>PhysX</li>
+            <li>OpenCL</li>
             <li>JavaScript</li>
             <li>HTML</li>
             <li>CSS</li>
@@ -447,6 +399,70 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+
+    <script>
+        lightbox.option({
+          'disableScrolling': true,
+          'wrapAround': true
+        })
+    </script>
+
+    <script>
+        var isExpanded1 = false;
+        var isExpanded2 = false;
+        var isExpandedAdd = false;
+        var expandedProjectHeight = "auto";
+        var additionalProjectHeight = "auto";
+
+        function openNav1() {
+            document.getElementById("project-overlay-1").style.height = "80%";
+        }
+
+        function closeNav1() {
+            document.getElementById("project-overlay-1").style.height = "0";
+        }
+
+        function toggleProject1() {
+            if (isExpanded1 == false) {
+                isExpanded1 = true;
+                document.getElementById("project-expand-1").style.height = expandedProjectHeight;
+                document.getElementById("expand-button-1").innerHTML = "Hide";
+                document.getElementById("project-1").style.borderRadius = "4px 4px 0px 0px";
+            } else {
+                isExpanded1 = false;
+                document.getElementById("project-expand-1").style.height = "0";
+                document.getElementById("expand-button-1").innerHTML = "Expand";
+                document.getElementById("project-1").style.borderRadius = "4px 4px 4px 4px";
+            }
+        }
+
+        function toggleProject2() {
+            if (isExpanded2 == false) {
+                isExpanded2 = true;
+                document.getElementById("project-expand-2").style.height = expandedProjectHeight;
+                document.getElementById("expand-button-2").innerHTML = "Hide";
+                document.getElementById("project-2").style.borderRadius = "4px 4px 0px 0px";
+            } else {
+                isExpanded2 = false;
+                document.getElementById("project-expand-2").style.height = "0";
+                document.getElementById("expand-button-2").innerHTML = "Expand";
+                document.getElementById("project-2").style.borderRadius = "4px 4px 4px 4px";
+            }
+        }
+
+        function toggleAdditionalProjects() {
+            if (isExpandedAdd == false) {
+                isExpandedAdd = true;
+                document.getElementById("project-expand-additional").style.height = additionalProjectHeight;
+                document.getElementById("expand-button-additional").innerHTML = "Hide";
+            } else {
+                isExpandedAdd = false;
+                document.getElementById("project-expand-additional").style.height = "0";
+                document.getElementById("expand-button-additional").innerHTML = "Expand";
+            }
+        }
+    </script>
 </body>
 
 </html>

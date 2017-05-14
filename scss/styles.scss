@@ -368,6 +368,19 @@ a.anchor {
     visibility: hidden;
 }
 
+.gallery {
+    float: left;
+    overflow-x: scroll;
+    max-width: 510px;
+    white-space: nowrap;
+
+    img {
+        margin-left:10px;
+        width:100px;
+        height:100px;
+    }
+}
+
 /*
     --------------------------
     ----- 4. Lead Styles -----
@@ -807,7 +820,11 @@ a.anchor {
 
 .additional-project {
     margin-top: 30px;
-    height: 250px;
+    height: 350px;
+
+    .project-info {
+        min-width: auto;
+    }
 }
 
 .additional-project-title {
