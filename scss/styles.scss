@@ -1145,6 +1145,23 @@ a.anchor {
         transform: none;
     }
 
+    .additional-project {
+        height: auto;
+
+        .project-info {
+            max-width: none;
+        }
+    }
+
+    .additional-project-title {
+        position: relative;
+        margin: 0 0 15px;
+        top: auto;
+        transform: none;
+        width: 100%;
+        height: auto;
+    }
+
     .additional-project-info {
         position: relative;
         top: auto;
